@@ -14,28 +14,28 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ALT  |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ALT  |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  .  | '/"  |
 // | GUI  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  | :/; | ?/! | ESC  |
-//                    | SHFT | LWR | SPC |   | ENT | BSPC  | DEL |
+//                    | LWR | SHFT | SPC |   | ENT | BSPC  | DEL |
                         bindings = <
    &kp TAB   &kp Q &kp Q &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp RALT
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp DOT   &th_tap SQT DQT
    &kp LGUI &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &th_tap COLON SEMI &th_tap QMARK EXCL &kp ESC
-                  &kp LSHIFT &mo 1 &kp SPACE   &kp RET &kp BSPC &kp DEL
+                  &mo 1  &kp LSHIFT &kp SPACE   &kp RET &kp BSPC &kp DEL
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ALT  |
+// | TAB  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ALT  |
 // | CAPS |  ^  |  &  |  *  |  (  |  )  |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |  @  |  #  |  $  |  %  |  ~  |   |  -  |  +  |  =  |  _  |     |      |   
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+//                    | LWR | SHFT | SPC |   | ENT | UPR  | DEL |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp RALT
    &kp CAPS &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &kp AT &kp HASH &kp DLLR &kp PRCNT         &kp MINUS &kp PLUS   &kp EQUAL &kp UNDER    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &mo 2   &kp DEL
+                  &mo 1  &kp LSHIFT &kp SPACE   &kp RET &mo 2 &kp DEL
                         >;
                 };
 
