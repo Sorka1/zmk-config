@@ -25,6 +25,22 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+
+/ {
+    macros {
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+};
+
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ALT  |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  .  | '/"  |
@@ -32,7 +48,7 @@
 //                    | LWR | SHFT | SPC |   | ENT | BSPC  | UPR |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp RALT
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp DOT   &th_tap SQT DQT
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp DOT   &th_tap DQT SQT
    &kp LGUI &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &th_tap SEMI COLON  &th_tap EXCL QMARK  &kp ESC
                   &mo 1  &kp LSHIFT &kp SPACE   &kp RET &kp BSPC &kp DEL
                         >;
@@ -46,7 +62,7 @@
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp RALT
    &kp LCTRL &kp AT &kp AMPS  &kp STAR &kp FSLH &kp RPAR   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LPAR &kp RPAR
-   &kp CAPS  &kp CARET &kp HASH &kp DLLR &kp PRCNT &kp TILDE2          &kp MINUS &kp PLUS   &kp EQUAL &kp UNDER    &trans &trans
+   &kp CAPS  &kp CARET &kp HASH &kp DLLR &kp PRCNT &kp TILDE2          &kp MINUS &kp PLUS   &kp EQUAL &kp UNDER    &PSCRN &PSCRN
                   &mo 1  &kp LSHIFT &kp SPACE   &kp RET &kp BSPC &mo 2
                         >;
                 };
