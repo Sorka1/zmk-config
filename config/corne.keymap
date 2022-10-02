@@ -42,12 +42,12 @@
 // -----------------------------------------------------------------------------------------
 // | TAB  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ALT  |
 // | CTRL |  @  |  &  |  *  |  /  |     |   | LFT | DWN |  UP | RGT |  (  |   )  |
-// | CAPS |  ^  |  #  |  $  |  %  |  ~  |   |  -  |  +  |  =  |  _  |     |      |   
+// | GUI |  ^  |  #  |  $  |  %  |  ~  |   |  -  |  +  |  =  |  _  |     |      |   
 //                    | LWR | SHFT | SPC |   | ENT | DEL  | UPR |
                         bindings = <
    &kp TAB    &kp LPAR       &kp RPAR       &kp DQT       &kp PSCRN       &kp C_PP         &kp STAR   &kp N1   &kp N2 &kp N3    &kp FSLH &kp RALT
    &kp LCTRL &kp AT &kp AMPS  &kp PRCNT &kp FSLH &kp UNDER   &kp PLUS &kp N4 &kp N5 &kp N6 &kp DOT &trans
-   &kp CAPS  &kp CARET &kp HASH &kp DLLR &kp EQUAL &kp TILDE          &kp MINUS &kp N7   &kp N8 &kp N9    &kp N0 &trans
+   &trans  &kp CARET &kp HASH &kp DLLR &kp EQUAL &kp TILDE          &kp MINUS &kp N7   &kp N8 &kp N9    &kp N0 &trans
                   &mo 1  &kp LSHIFT &kp SPACE   &kp RET &kp BSPC &mo 2
                         >;
                 };
@@ -59,7 +59,7 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | BSPC |
                         bindings = <
-   &kp  TAB  &trans &trans &trans &trans &trans   &trans &trans  &kp UP &trans &trans &trans
+   &kp  TAB  &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &trans  &kp UP &trans &trans &trans
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans &kp LEFT &kp DOWN        &kp RIGHT &trans &trans
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &trans &trans  &kp RBKT        &kp RBRC &kp PIPE &kp TILDE
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp BSPC
