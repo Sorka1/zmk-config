@@ -16,23 +16,25 @@
 };
 
 / {
-  behaviors {
-    homerow_mods: behavior-hold-tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "Home Row Mods";
-      tapping-term-ms = <200>;
-      quick-tap-ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
+
+
+ 	 behaviors {
+	      homerow_mods: behavior-hold-tap {
+	      compatible = "zmk,behavior-hold-tap";
+	      label = "Home Row Mods";
+	      tapping-term-ms = <200>;
+	      quick-tap-ms = <0>;
+	      flavor = "tap-preferred";
+	      bindings = <&kp>, <&kp>;
     };
-	td: tapdance {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+	global_quick_tap: behavior-hold-tap {
+      	compatible = "zmk,behavior-hold-tap";
+       	label = "Global Quick Tap";
+        tapping-term-ms = <200>;
+       	quick-tap-ms = <125>;
+       	lavor = "tap-preferred";
+       	bindings = <&kp>, <&kp>;
+       
         };
     };
     
@@ -46,7 +48,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp RALT
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp DOT   &th_tap DQT SQT
    &kp LGUI &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &th_tap SEMI COLON  &th_tap EXCL QMARK  &kp ESC
-                  &mo 1  &kp LSHIFT &mt LC(LS(LALT)) SPC   &kp RET &kp BSPC &kp DEL
+                  &mo 1  &kp LSHIFT &gqt LC(LS(LALT)) SPACE  &kp RET &kp BSPC &kp DEL
                         >;
                 };
                 lower_layer {
