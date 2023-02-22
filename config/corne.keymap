@@ -19,7 +19,7 @@
 
 
  	 behaviors {
-	      homerow_mods: behavior-hold-tap {
+	      th_tap: homerow_mods {
 	      compatible = "zmk,behavior-hold-tap";
 	      label = "Home Row Mods";
 	      tapping-term-ms = <200>;
