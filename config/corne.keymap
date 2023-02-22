@@ -12,11 +12,6 @@
     tapping-term-ms = <400>;
 };
 
-/ {
-    keymap {
-        ...
-    };
-};
 
 / {
 
