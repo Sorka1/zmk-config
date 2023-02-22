@@ -67,9 +67,9 @@
                 raise_layer {
 
                         bindings = <
-   &kp  TAB  &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &trans  &kp UP &trans &trans &trans
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_BRI_UP &kp LEFT &kp DOWN        &kp RIGHT &trans &trans
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp C_BRI_DN &trans  &kp RBKT        &kp RBRC &kp PIPE &kp TILDE
+   &kp  TAB  &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &trans  &kp UP &trans &trans &bt BT_CLR
+   &trans &trans &trns &trans &trans &trans      &kp C_BRI_UP &kp LEFT &kp DOWN        &kp RIGHT &trans &bt BT_SEL 0
+   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp C_BRI_DN &trans  &kp RBKT        &kp RBRC &kp PIPE &bt BT_SEL 1
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp BSPC
                         >;
                 };
