@@ -14,22 +14,21 @@
     homerow_mods: behavior-hold-tap {
       compatible = "zmk,behavior-hold-tap";
       label = "Home Row Mods";
-      tapping-term-ms = <300>;
-      quick-tap-ms = <200>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-
-    global_quick_tap: behavior-hold-tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "Global Quick Tap";
       tapping-term-ms = <200>;
-      quick-tap-ms = <125>;
+      quick-tap-ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
-  };
-};
+	td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
 	  
     };
         keymap {
@@ -37,24 +36,17 @@
 
                 default_layer {
 
-// -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | ALT  |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  .  | '/"  |
-// | GUI  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  | :/; | ?/! | ESC  |
-//                    | LWR | SHFT | SPC |   | ENT | BSPC  | UPR |
+
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp RALT
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp DOT   &th_tap DQT SQT
    &kp LGUI &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &th_tap SEMI COLON  &th_tap EXCL QMARK  &kp ESC
-                  &mo 1  &kp LSHIFT &gqt LC(LS(LALT)) SPACE   &kp RET &kp BSPC &kp DEL
+                  &mo 1  &kp LSHIFT &mt LC(LS(LALT)) SPC   &kp RET &kp BSPC &kp DEL
                         >;
                 };
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ALT  |
-// | CTRL |  @  |  &  |  *  |  /  |     |   | LFT | DWN |  UP | RGT |  (  |   )  |
-// | GUI |  ^  |  #  |  $  |  %  |  ~  |   |  -  |  +  |  =  |  _  |     |      |   
-//                    | LWR | SHFT | SPC |   | ENT | DEL  | UPR |
+
+
                         bindings = <
    &kp TAB    &kp LPAR       &kp RPAR       &kp DQT       &kp PSCRN       &kp C_PP         &kp STAR   &kp N1   &kp N2 &kp N3    &kp FSLH &kp RALT
    &kp LCTRL &kp AT &kp AMPS  &kp PRCNT &kp FSLH &kp UNDER   &kp PLUS &kp N4 &kp N5 &kp N6 &kp DOT &trans
@@ -64,11 +56,7 @@
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | RALT |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |  -  |  =  |  [  |  ]  |  /  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | BSPC |
+
                         bindings = <
    &kp  TAB  &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &trans  &kp UP &trans &trans &trans
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &trans &kp LEFT &kp DOWN        &kp RIGHT &trans &trans
