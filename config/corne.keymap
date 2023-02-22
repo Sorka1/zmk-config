@@ -10,27 +10,25 @@
 
 
 / {
+  behaviors {
+    homerow_mods: behavior-hold-tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "Home Row Mods";
+      tapping-term-ms = <300>;
+      quick-tap-ms = <200>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
 
-	behaviors {
-        th_tap: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-	
-	  gqt: global-quick-tap {
-    compatible = "zmk,behavior-hold-tap";
-    label = "GLOBAL_QUICK_TAP";
-    #binding-cells = <2>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <125>;
-    global-quick-tap;
-    bindings = <&kp>, <&kp>;
+    global_quick_tap: behavior-hold-tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "Global Quick Tap";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <125>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+  };
 };
 	  
     };
