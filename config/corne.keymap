@@ -47,7 +47,7 @@
 
 
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T  		 &kp Y &kp U  &kp I     &kp O   &kp P    &kp RALT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T  		 &kp Y &kp U  &kp I     &kp O   &kp P    &kp TAB
    &kp LCTRL &kp A &kp S &th_tap LALT D &th_tap LGUI F &kp G  	 &kp H &th_tap LGUI J  &th_tap RALT K     &kp L   &kp DOT   &th_tap DQT SQT
    &kp LGUI &kp Z &kp X &kp C &kp V &kp B  		 &kp N &kp M  &kp COMMA &th_tap SEMI COLON  &th_tap EXCL QMARK  &kp ESC
    &mo 1  &kp LSHIFT &gqt LC(LS(LALT)) SPACE		 &kp RET &kp BSPC &kp DEL
