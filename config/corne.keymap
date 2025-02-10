@@ -5,11 +5,10 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define NAV 1
-
 
 &mt {
     flavor = "tap-preferred";
@@ -17,72 +16,66 @@
 };
 
 / {
-
-
- 	 behaviors {
-	      th_tap: homerow_mods {
-	      compatible = "zmk,behavior-hold-tap";
-	      label = "Home Row Mods";
-	      #binding-cells = <2>;
-	      tapping-term-ms = <200>;
-	      quick-tap-ms = <0>;
-	      flavor = "tap-preferred";
-	      bindings = <&kp>, <&kp>;
-    };
-	gqt: global-quick-tap {
-		    compatible = "zmk,behavior-hold-tap";
-		    label = "GLOBAL_QUICK_TAP";
-		    #binding-cells = <2>;
-		    flavor = "tap-preferred";
-		    tapping-term-ms = <200>;
-		    quick-tap-ms = <125>;
-		    global-quick-tap;
-		    bindings = <&kp>, <&kp>;
-		};
-    };
-    
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-
-    bindings = <
-        &kp TAB   &kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I     &kp O   &kp P    &kp TAB
-        &kp LCTRL &kp A &kp S &th_tap LALT D &th_tap LGUI F &kp G       &kp H &th_tap LGUI J  &th_tap RALT K     &kp L   &kp DOT   &th_tap DQT SQT
-        &kp LGUI &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &th_tap SEMI COLON  &th_tap EXCL QMARK  &kp ESC
-        &mo 2  &kp LSHIFT &gqt LC(LS(LALT)) SPACE       &lt NAV RET &kp BSPC &kp DEL
-    >;
-};
-
-                nav {
-                        bindings = <
-&trans &trans &trans &trans &trans &trans                 &trans  &trans  &kp UP  &trans  &trans  &trans
-&trans &trans &trans &trans &trans &trans                 &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  
-&trans &trans &trans &trans &trans &trans                 &trans  &trans  &trans  &trans  &trans  &trans  
-                        &mo 1  &kp LSHIFT &kp SPACE     &kp RET   &kp BSPC &mo 2
-                        >;
-                };
-
-
-                lower_layer {
-
-
-                        bindings = <
-   &kp TAB    &kp LPAR       &kp RPAR       &kp DQT       &kp PSCRN       &kp C_PP         &kp STAR   &kp N1   &kp N2 &kp N3    &kp FSLH &kp RALT
-   &mo 2 &kp AT &kp AMPS  &kp PRCNT &kp FSLH &kp UNDER   &kp PLUS &kp N4 &kp N5 &kp N6 &kp DOT &trans
-   &trans  &kp CARET &kp HASH &kp DLLR &kp EQUAL &kp TILDE          &kp MINUS &kp N7   &kp N8 &kp N9    &kp N0 &trans
-                  &mo 1  &kp LSHIFT &kp SPACE   &kp RET &kp BSPC &mo 3
-                        >;
-                };
-
-                raise_layer {
-
-                        bindings = <
-   &kp  TAB  &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &trans  &kp UP &trans &trans &bt BT_CLR
-   &trans &trans &trans &trans &trans &trans      &kp C_BRI_UP &kp LEFT &kp DOWN        &kp RIGHT &trans &bt BT_SEL 0
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp C_BRI_DN &trans  &kp RBKT        &kp RBRC &kp PIPE &bt BT_NXT
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp BSPC
-                        >;
-                };
+    behaviors {
+        th_tap: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Home Row Mods";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
+
+        gqt: global-quick-tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GLOBAL_QUICK_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E           &kp R           &kp T                      &kp Y        &kp U           &kp I           &kp O               &kp P               &kp TAB
+&kp LCTRL  &kp A  &kp S  &th_tap LALT D  &th_tap LGUI F  &kp G                      &kp H        &th_tap LGUI J  &th_tap RALT K  &kp L               &kp DOT             &th_tap DQT SQT
+&kp LGUI   &kp Z  &kp X  &kp C           &kp V           &kp B                      &kp N        &kp M           &kp COMMA       &th_tap SEMI COLON  &th_tap EXCL QMARK  &kp ESC
+                         &mo 2           &kp LSHIFT      &gqt LC(LS(LALT)) SPACE    &lt NAV RET  &kp BSPC        &kp DEL
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans      &trans       &trans   &trans    &kp UP    &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans      &trans       &trans   &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans      &trans       &trans   &trans    &trans    &trans     &trans  &trans
+                        &mo 1   &kp LSHIFT  &kp SPACE    &kp RET  &kp BSPC  &mo 2
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&kp TAB  &kp LPAR   &kp RPAR  &kp DQT    &kp PSCRN   &kp C_PP     &kp STAR   &kp N1    &kp N2  &kp N3  &kp FSLH  &kp RALT
+&mo 2    &kp AT     &kp AMPS  &kp PRCNT  &kp FSLH    &kp UNDER    &kp PLUS   &kp N4    &kp N5  &kp N6  &kp DOT   &trans
+&trans   &kp CARET  &kp HASH  &kp DLLR   &kp EQUAL   &kp TILDE    &kp MINUS  &kp N7    &kp N8  &kp N9  &kp N0    &trans
+                              &mo 1      &kp LSHIFT  &kp SPACE    &kp RET    &kp BSPC  &mo 3
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&kp TAB    &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp C_BRI_UP    &kp C_VOLUME_UP    &trans    &kp UP    &trans     &trans    &bt BT_CLR
+&trans     &trans    &trans    &trans    &trans    &kp C_BRI_DN    &kp C_VOLUME_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &bt BT_SEL 0
+&kp LSHFT  &trans    &trans    &trans    &trans    &trans          &trans             &trans    &kp RBKT  &kp RBRC   &kp PIPE  &bt BT_NXT
+                               &kp LGUI  &trans    &kp SPACE       &kp RET            &trans    &kp BSPC
+            >;
+        };
+    };
 };
