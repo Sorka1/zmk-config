@@ -87,9 +87,10 @@
              * Left thumbs: Ctrl, Shift, Space. Hold the outer pinky key for numbers and F-keys.
              * Right half types normally, with / on the bottom-right outer key for chat commands.
              * Right inner thumb: tap Enter, hold Meh (Ctrl+Shift+Alt) for AeroSpace workspaces.
-             * Right outer thumb = Raise, so Raise + M (toggle) also switches game mode off. */
+             * Right outer thumb = Raise, so Raise + M (toggle) also switches game mode off.
+             * Top-right corner key: leave game mode in one press (back to the base layer). */
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E      &kp R       &kp T        &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB  &kp Q  &kp W  &kp E      &kp R       &kp T        &trans  &trans  &trans  &trans  &trans  &to 0
 &mo GFN  &kp A  &kp S  &kp D      &kp F       &kp G        &trans  &trans  &trans  &trans  &trans  &trans
 &kp ESC  &kp Z  &kp X  &kp C      &kp V       &kp B        &trans  &trans  &trans  &trans  &trans  &kp FSLH
                        &kp LCTRL  &kp LSHIFT  &kp SPACE    &gqt LC(LS(LALT)) RET  &trans  &mo RAISE
